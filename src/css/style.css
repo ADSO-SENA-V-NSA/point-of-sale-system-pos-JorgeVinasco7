@@ -1,12 +1,13 @@
 body {
     outline: 1px solid blue;
     display: flex;
+    width: 240px;
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #sidebar {
-    width: 500px;
+    width: 240px;
     outline: 1px solid green;
     padding: 5px 0px;
 }
@@ -15,6 +16,7 @@ body {
     outline: 1px solid purple;
     display: flex;
     align-items: center;
+    width: 1135px;
 }
 
 #navbar h1 {
@@ -23,6 +25,22 @@ body {
     padding: 5px;
     font-size: 1.5rem;
 }
-#icon {
-    
+.icon {
+  position: relative;
+  display: inline-flexbox;
+  min-width: 60px;
+  height: 60px;
+  line-height: 82px;
+  text-align: center; 
 }
+
+.container {
+    position: relative;
+    width: 100%;
+  }
+.log{
+    position: relative;
+    margin: 2%;
+    top: 10px
+    }  
+
