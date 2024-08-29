@@ -5,7 +5,7 @@ $enlace = mysqli_connect("localhost" , "root" , "" , "login");
 //Si hay conexion
 if(!$enlace){
    die("NO HAY CONEXION A LA BASE DE DATOS".mysqli_error());
-}
+} 
 // Cerrar la conexión
-mysqli_close($enlace);
+//mysqli_close($enlace);
 ?>

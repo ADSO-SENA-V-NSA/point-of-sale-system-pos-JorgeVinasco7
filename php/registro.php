@@ -1,22 +1,19 @@
 <?php
-  require 'conexionDB.php';
+// Incluir el archivo de conexión
+include 'conexionDB.php';
+   
+   $Email = $_POST['txtemail'];
+   $Password = $_POST['txtpassword'];
 
-  $message = '';
-  
-  if(!empty($_POST['txtemail']) && !empty($_POST['txtpassword'])){
-     $sql = "INSERT INTRO user(txtemail, txtpassword) VALUES (:txtemail, :txtpassword)";
-     $stmt = $conn->prepare($sql);
-     $stmt->bindParam('txtemail', $_POST['txtemail']);
-     $password = password_hash($_POST['txtpassword'], PASSWORD_BCRYPT);
-     $stmt->bindParam('txtpassword',$password);
-  }
+   $insertar = "INSERT INTO user(Email, password) VALUES ('$Email', '$Password')";
+   $result = $enlace -> query($insertar);
 
-  if($stmt->execute()){
-     $message = 'Successfully created new user';
-  } else {
-    $message = 'Sorry there must have been an issue creating your account';
-  }
+   if ($result -> num_rows > 0) {
+    // no se registro 
+    echo "NO REGISTRADO.";
+} else {
+    //no registro
+    echo "REGISTRADO.";
+}
+
 ?>
-<?php if(!empty($message)):?>
-  <p><? = $message ?></p>
-  <?php endif; ?>
