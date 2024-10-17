@@ -1,3 +1,14 @@
+<?php
+$date = [
+    [
+        'id' => 1,
+        'name' => 'Pedro',
+        'Email' => 'pedro@example.com',
+    ]
+]
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>This is in Index</title>
+    <title><?php echo 'Hello from PHP' ?></title>
 </head>
 
 <body class="font-base">
@@ -94,13 +105,50 @@
                 </div>
             </nav>
             <div class="content h-full p-4 bg-gray-100">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, voluptatem dolorem vero beatae esse,
-                voluptas inventore blanditiis consectetur libero cumque autem molestias, delectus aut corporis
-                necessitatibus omnis eaque maiores itaque?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, voluptatem dolorem vero beatae esse,
-                voluptas inventore blanditiis consectetur libero cumque autem molestias, delectus aut corporis
-                necessitatibus omnis eaque maiores itaque?
-
+                <table class="w-full border border-red-500">
+                    <thead>
+                        <th>ID</th>
+                        <th>Nombres</th>
+                        <th>Correo</th>
+                        <th>Creado</th>
+                    </thead>
+                    <tr class="text-center border border-blue-400">
+                        <th>1</th>
+                        <th>Pedro</th>
+                        <th>pedro@correo.com</th>
+                        <th>15 de octubre de 2024</th>
+                    </tr>
+                    <tr class="text-center border border-blue-400">
+                        <th>2</th>
+                        <th>Maria</th>
+                        <th>maria@correo.com</th>
+                        <th>20 de noviembre de 2024</th>
+                    </tr>
+                    <tr class="text-center border border-blue-400">
+                        <th>3</th>
+                        <th>Juan</th>
+                        <th>juan@correo.com</th>
+                        <th>4 de diciembre de 2024</th>
+                    </tr>
+                    <tr class="text-center border border-blue-400">
+                        <th>4</th>
+                        <th>Jorge</th>
+                        <th>jorge@correo.com</th>
+                        <th>4 de enero de 2024</th>
+                    </tr>
+                    <tr class="text-center border border-blue-400">
+                        <th>5</th>
+                        <th>lucia</th>
+                        <th>lucia@correo.com</th>
+                        <th>23 de julio de 2024</th>
+                    </tr>
+                    <tr class="text-center border border-blue-400">
+                        <th>6</th>
+                        <th>Marcos</th>
+                        <th>marcos@correo.com</th>
+                        <th>22 de marzo de 2024</th>
+                    </tr>
+                </table>
             </div>
         </main>
     </div>

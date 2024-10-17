@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/output.css">
     <title>Dashboard</title>
 </head>
@@ -11,7 +12,7 @@
 <body class="font-base">
     <div class="flex">
         <nav class="sidebar border p-0 border-gray-200 h-screen w-45">
-            <figure class="px-4 py-8">
+            <figure class="px-4 py-4">
                 <svg width="183" height="36" viewBox="0 0 183 36" fill="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <rect width="36" height="36" fill="url(#pattern0_215_65)" />
@@ -27,10 +28,13 @@
                     </defs>
                 </svg>
             </figure>
-            <ul class="py-4 px-4 flex flex-col gap-4 text-sm text-gray-400">
-                <li><a href="#" class="hover:text-violet-400 hover:font-bold">Dashboard</a>
+            <ul class="py-8 px-4 flex flex-col gap-4 text-gray-400">
+                <li><span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <a href="#" class="hover:text-violet-400 hover:font-bold text-base">Dashboard</a>
                 </li>
-                <li><a href="/MySQL/login/transaction.html"
+                <li><a href="/MySQL/login/transaction.php"
                         class="hover:text-violet-400 hover:font-bold">Transactions</a></li>
                 <li><a href="#" class="hover:text-violet-400 hover:font-bold">Accounts</a></li>
                 <li><a href="#" class="hover:text-violet-400 hover:font-bold">Investments</a></li>
@@ -41,106 +45,206 @@
                 <li><a href="#" class="hover:text-violet-400 hover:font-bold">Setting</a></li>
             </ul>
         </nav>
-        <!--sidebar-->
-
+        <!-- sidebar -->
         <main class="flex-auto h-screen">
             <nav class="topbar flex justify-between items-center items-stretch">
-                <div class="p-4 flex-auto">
-                    <h2 class="font-semibold text-lg text-gray-700">Overview</h2>
+                <div class="p-6 flex-auto">
+                    <h2 class="font-semibold text-3xl text-gray-700">Overview</h2>
                 </div>
                 <div class="flex-auto w-1/3 p-2 flex items-center justify-end gap-2">
                     <input type="search" placeholder="Search for something"
-                        class="bg-gray-100 rounded-full px-3 py-2 text-xs found-light font-gray-300">
-                    <button class="bg-gray-100 rounded-full">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="20" cy="20" r="20" fill="#F5F7FA" />
-                            <g clip-path="url(#clip0_147_126)">
+                        class="bg-gray-100 rounded-full px-3 py-2 text-xs font-light font-gray-300">
+                    <button class="bg-gray-100 rounded-full p-2">
+                        <svg width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_105_443)">
                                 <path
-                                    d="M20.5648 29H19.4351C18.5215 29 17.7781 28.2567 17.7781 27.343V26.9608C17.3896 26.8367 17.0122 26.68 16.6497 26.4924L16.3788 26.7633C15.7229 27.42 14.6721 27.4008 14.0351 26.763L13.2367 25.9646C12.5987 25.3273 12.5803 24.2768 13.2369 23.6209L13.5076 23.3503C13.3199 22.9877 13.1633 22.6104 13.0392 22.2219H12.657C11.7434 22.2219 11 21.4785 11 20.5649V19.4351C11 18.5215 11.7434 17.7781 12.6571 17.7781H13.0392C13.1633 17.3896 13.32 17.0123 13.5076 16.6497L13.2367 16.3789C12.5805 15.7234 12.5986 14.6728 13.237 14.0352L14.0355 13.2367C14.6739 12.5975 15.7244 12.5815 16.3791 13.237L16.6497 13.5076C17.0123 13.32 17.3897 13.1633 17.7781 13.0392V12.657C17.7781 11.7433 18.5215 11 19.4352 11H20.5649C21.4785 11 22.2219 11.7433 22.2219 12.657V13.0392C22.6103 13.1633 22.9877 13.32 23.3503 13.5076L23.6211 13.2367C24.2771 12.58 25.3279 12.5992 25.9648 13.237L26.7633 14.0354C27.4013 14.6727 27.4197 15.7232 26.763 16.3791L26.4924 16.6497C26.68 17.0123 26.8367 17.3896 26.9608 17.7781H27.3429C28.2566 17.7781 29 18.5215 29 19.4351V20.5649C29 21.4785 28.2566 22.2219 27.3429 22.2219H26.9608C26.8367 22.6104 26.68 22.9877 26.4924 23.3503L26.7633 23.6211C27.4195 24.2767 27.4014 25.3272 26.763 25.9648L25.9645 26.7633C25.3261 27.4026 24.2756 27.4185 23.6209 26.7631L23.3503 26.4925C22.9877 26.6801 22.6103 26.8367 22.2219 26.9609V27.3431C22.2219 28.2567 21.4785 29 20.5648 29ZM16.826 25.3849C17.3297 25.6828 17.8718 25.9078 18.4372 26.0537C18.6701 26.1138 18.8328 26.3238 18.8328 26.5643V27.343C18.8328 27.6751 19.1031 27.9453 19.4352 27.9453H20.5649C20.897 27.9453 21.1672 27.6751 21.1672 27.343V26.5643C21.1672 26.3238 21.3299 26.1138 21.5628 26.0537C22.1283 25.9078 22.6704 25.6828 23.174 25.3849C23.3813 25.2623 23.6451 25.2957 23.8154 25.4659L24.3669 26.0175C24.6047 26.2556 24.9866 26.25 25.2186 26.0177L26.0176 25.2188C26.249 24.9877 26.2567 24.6057 26.0178 24.3671L25.466 23.8153C25.2958 23.6451 25.2624 23.3812 25.385 23.174C25.6828 22.6704 25.9078 22.1283 26.0538 21.5628C26.1139 21.3299 26.3239 21.1672 26.5644 21.1672H27.343C27.6751 21.1672 27.9453 20.897 27.9453 20.5649V19.4352C27.9453 19.1031 27.6751 18.8328 27.343 18.8328H26.5644C26.3239 18.8328 26.1139 18.6701 26.0538 18.4373C25.9078 17.8718 25.6828 17.3297 25.385 16.8261C25.2624 16.6188 25.2958 16.355 25.466 16.1847L26.0176 15.6332C26.256 15.395 26.2498 15.0132 26.0178 14.7815L25.2188 13.9826C24.9873 13.7507 24.6053 13.7439 24.3672 13.9824L23.8154 14.5342C23.6452 14.7044 23.3813 14.7377 23.1741 14.6152C22.6704 14.3173 22.1283 14.0923 21.5628 13.9463C21.33 13.8863 21.1673 13.6762 21.1673 13.4357V12.657C21.1673 12.3249 20.897 12.0547 20.5649 12.0547H19.4352C19.1031 12.0547 18.8328 12.3249 18.8328 12.657V13.4357C18.8328 13.6762 18.6701 13.8862 18.4373 13.9463C17.8718 14.0922 17.3297 14.3172 16.826 14.6151C16.6187 14.7376 16.3549 14.7043 16.1847 14.5341L15.6331 13.9825C15.3953 13.7444 15.0134 13.75 14.7815 13.9823L13.9825 14.7812C13.7511 15.0123 13.7434 15.3942 13.9823 15.6329L14.5341 16.1847C14.7043 16.3549 14.7376 16.6188 14.6151 16.826C14.3172 17.3296 14.0922 17.8717 13.9463 18.4372C13.8862 18.6701 13.6762 18.8328 13.4357 18.8328H12.6571C12.3249 18.8328 12.0547 19.103 12.0547 19.4351V20.5649C12.0547 20.897 12.3249 21.1672 12.6571 21.1672H13.4357C13.6762 21.1672 13.8862 21.3299 13.9463 21.5627C14.0922 22.1282 14.3172 22.6703 14.6151 23.174C14.7376 23.3812 14.7043 23.6451 14.534 23.8153L13.9825 24.3669C13.7441 24.605 13.7503 24.9868 13.9823 25.2185L14.7812 26.0174C15.0128 26.2493 15.3947 26.2561 15.6329 26.0177L16.1846 25.4659C16.31 25.3405 16.571 25.2341 16.826 25.3849Z"
+                                    d="M13.2845 25H11.7155C10.4465 25 9.41401 23.9676 9.41401 22.6986V22.1678C8.87451 21.9954 8.35034 21.7778 7.84678 21.5172L7.47061 21.8934C6.55952 22.8056 5.1001 22.7789 4.21548 21.8931L3.10654 20.7842C2.22036 19.899 2.19487 18.44 3.10684 17.5291L3.48271 17.1532C3.22212 16.6496 3.00459 16.1255 2.83218 15.5859H2.30142C1.03247 15.5859 0 14.5535 0 13.2845V11.7155C0 10.4465 1.03247 9.41406 2.30146 9.41406H2.83223C3.00464 8.87451 3.22217 8.35039 3.48276 7.84683L3.10659 7.4707C2.19517 6.56025 2.22031 5.10117 3.10688 4.21558L4.21592 3.10659C5.10259 2.2187 6.56167 2.19653 7.471 3.10688L7.84683 3.48271C8.35039 3.22217 8.87456 3.00459 9.41406 2.83218V2.30142C9.41406 1.03242 10.4465 0 11.7155 0H13.2845C14.5535 0 15.5859 1.03242 15.5859 2.30142V2.83223C16.1254 3.00459 16.6496 3.22217 17.1532 3.48276L17.5293 3.10659C18.4404 2.19438 19.8999 2.22114 20.7845 3.10693L21.8934 4.21582C22.7796 5.10103 22.8051 6.55996 21.8931 7.47095L21.5172 7.84683C21.7778 8.35039 21.9954 8.87446 22.1678 9.41406H22.6985C23.9675 9.41406 25 10.4465 25 11.7155V13.2845C25 14.5535 23.9675 15.5859 22.6985 15.5859H22.1678C21.9954 16.1255 21.7778 16.6496 21.5172 17.1532L21.8934 17.5293C22.8048 18.4398 22.7797 19.8989 21.8931 20.7845L20.7841 21.8935C19.8974 22.7813 18.4383 22.8035 17.529 21.8932L17.1532 21.5173C16.6496 21.7779 16.1254 21.9955 15.5859 22.1679V22.6987C15.5859 23.9676 14.5535 25 13.2845 25ZM8.09165 19.979C8.79121 20.3927 9.54414 20.7053 10.3295 20.908C10.6529 20.9914 10.8789 21.2831 10.8789 21.6171V22.6986C10.8789 23.1599 11.2542 23.5352 11.7155 23.5352H13.2845C13.7458 23.5352 14.1211 23.1599 14.1211 22.6986V21.6171C14.1211 21.2831 14.3471 20.9914 14.6706 20.908C15.4559 20.7053 16.2088 20.3927 16.9084 19.979C17.1962 19.8088 17.5627 19.8551 17.7992 20.0916L18.5652 20.8576C18.8955 21.1883 19.4258 21.1806 19.748 20.858L20.8577 19.7483C21.1791 19.4273 21.1898 18.8968 20.858 18.5654L20.0917 17.7991C19.8552 17.5626 19.8089 17.1961 19.9791 16.9083C20.3928 16.2088 20.7053 15.4559 20.908 14.6705C20.9915 14.3471 21.2832 14.1211 21.6172 14.1211H22.6986C23.1599 14.1211 23.5352 13.7458 23.5352 13.2846V11.7155C23.5352 11.2542 23.1599 10.879 22.6986 10.879H21.6172C21.2832 10.879 20.9915 10.653 20.908 10.3296C20.7053 9.54419 20.3928 8.79126 19.9791 8.09175C19.8089 7.80395 19.8552 7.43745 20.0917 7.20103L20.8577 6.43496C21.1889 6.1042 21.1802 5.57393 20.858 5.2521L19.7484 4.14248C19.4268 3.82041 18.8963 3.81099 18.5655 4.14219L17.7992 4.90855C17.5628 5.14502 17.1962 5.19131 16.9084 5.02109C16.2089 4.60737 15.456 4.29482 14.6706 4.09214C14.3472 4.00869 14.1212 3.71699 14.1212 3.38296V2.30142C14.1212 1.84014 13.7458 1.46484 13.2846 1.46484H11.7156C11.2543 1.46484 10.879 1.84014 10.879 2.30142V3.38286C10.879 3.71689 10.653 4.00859 10.3295 4.09204C9.54419 4.29473 8.79126 4.60728 8.0917 5.021C7.80381 5.19116 7.43735 5.14487 7.20093 4.90845L6.43491 4.14238C6.10464 3.81172 5.57422 3.81938 5.2521 4.14204L4.14238 5.25171C3.821 5.57271 3.81025 6.10313 4.14209 6.43457L4.90845 7.20093C5.14487 7.43735 5.19116 7.80386 5.021 8.09165C4.60728 8.79116 4.29478 9.54409 4.09209 10.3295C4.00859 10.6529 3.71689 10.8789 3.38291 10.8789H2.30146C1.84019 10.8789 1.46484 11.2542 1.46484 11.7155V13.2845C1.46484 13.7458 1.84019 14.1211 2.30146 14.1211H3.38286C3.71689 14.1211 4.00854 14.3471 4.09204 14.6705C4.29473 15.4559 4.60728 16.2088 5.02095 16.9083C5.19111 17.1961 5.14482 17.5626 4.9084 17.799L4.14233 18.5651C3.81118 18.8959 3.81982 19.4261 4.14204 19.7479L5.25166 20.8576C5.57329 21.1796 6.10376 21.1891 6.43452 20.8579L7.20083 20.0915C7.37505 19.9173 7.7375 19.7695 8.09165 19.979Z"
                                     fill="#718EBF" />
                                 <path
-                                    d="M20 23.9163C17.8405 23.9163 16.0836 22.1594 16.0836 19.9999C16.0836 17.8404 17.8405 16.0835 20 16.0835C22.1595 16.0835 23.9164 17.8404 23.9164 19.9999C23.9164 22.1594 22.1595 23.9163 20 23.9163ZM20 17.1382C18.422 17.1382 17.1383 18.4219 17.1383 19.9999C17.1383 21.5779 18.422 22.8616 20 22.8616C21.578 22.8616 22.8617 21.5779 22.8617 19.9999C22.8617 18.4219 21.578 17.1382 20 17.1382Z"
+                                    d="M12.5 17.9395C9.50063 17.9395 7.06055 15.4993 7.06055 12.5C7.06055 9.50068 9.50063 7.06055 12.5 7.06055C15.4994 7.06055 17.9395 9.50068 17.9395 12.5C17.9395 15.4993 15.4994 17.9395 12.5 17.9395ZM12.5 8.52539C10.3083 8.52539 8.52539 10.3084 8.52539 12.5C8.52539 14.6916 10.3084 16.4746 12.5 16.4746C14.6916 16.4746 16.4746 14.6916 16.4746 12.5C16.4746 10.3084 14.6917 8.52539 12.5 8.52539Z"
                                     fill="#718EBF" />
                             </g>
                             <defs>
-                                <clipPath id="clip0_147_126">
-                                    <rect width="18" height="18" fill="white" transform="translate(11 11)" />
+                                <clipPath id="clip0_105_443">
+                                    <rect width="25" height="25" fill="white" />
                                 </clipPath>
                             </defs>
                         </svg>
-
                     </button>
-                    <button class="bg-gray-100 rounded-full"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="20" cy="20" r="20" fill="#F5F7FA" />
-                            <g clip-path="url(#clip0_147_127)">
-                                <path
-                                    d="M19.2382 29C17.6881 29 16.4257 27.7385 16.4257 26.1875C16.4257 25.877 16.6777 25.625 16.9882 25.625C17.2987 25.625 17.5507 25.877 17.5507 26.1875C17.5507 27.1183 18.3082 27.875 19.2382 27.875C20.1682 27.875 20.9257 27.1183 20.9257 26.1875C20.9257 25.877 21.1777 25.625 21.4882 25.625C21.7987 25.625 22.0507 25.877 22.0507 26.1875C22.0507 27.7385 20.7885 29 19.2382 29Z"
-                                    fill="#FE5C73" />
-                                <path
-                                    d="M25.4257 26.75H13.0507C12.327 26.75 11.7383 26.1613 11.7383 25.4375C11.7383 25.0534 11.9055 24.6898 12.1972 24.44C12.216 24.4235 12.2362 24.4085 12.2572 24.3949C13.3582 23.4342 13.9883 22.052 13.9883 20.5924V18.5C13.9883 15.6051 16.344 13.25 19.2382 13.25C19.3583 13.25 19.488 13.2522 19.6081 13.2725C19.9147 13.3235 20.1218 13.6138 20.0707 13.9198C20.0198 14.2257 19.7242 14.4328 19.4235 14.3817C19.3635 14.372 19.2976 14.375 19.2382 14.375C16.9643 14.375 15.1133 16.2252 15.1133 18.5V20.5924C15.1133 22.4045 14.319 24.119 12.9361 25.2957C12.9248 25.3047 12.9151 25.313 12.903 25.3212C12.8828 25.3468 12.8633 25.3858 12.8633 25.4375C12.8633 25.5394 12.9488 25.625 13.0507 25.625H25.4257C25.5278 25.625 25.6133 25.5394 25.6133 25.4375C25.6133 25.3849 25.5938 25.3468 25.5728 25.3212C25.5616 25.313 25.5518 25.3047 25.5405 25.2957C24.1568 24.1182 23.3633 22.4045 23.3633 20.5924V19.7751C23.3633 19.4646 23.6153 19.2126 23.9258 19.2126C24.2363 19.2126 24.4883 19.4646 24.4883 19.7751V20.5924C24.4883 22.0528 25.1191 23.4357 26.2216 24.3973C26.2417 24.4107 26.2612 24.425 26.2792 24.4408C26.5711 24.6898 26.7383 25.0534 26.7383 25.4375C26.7383 26.1613 26.1496 26.75 25.4257 26.75Z"
-                                    fill="#FE5C73" />
-                                <path
-                                    d="M24.4883 18.5C22.4206 18.5 20.7383 16.8178 20.7383 14.75C20.7383 12.6823 22.4206 11 24.4883 11C26.5561 11 28.2382 12.6823 28.2382 14.75C28.2382 16.8178 26.5561 18.5 24.4883 18.5ZM24.4883 12.125C23.0407 12.125 21.8633 13.3025 21.8633 14.75C21.8633 16.1975 23.0407 17.375 24.4883 17.375C25.9358 17.375 27.1132 16.1975 27.1132 14.75C27.1132 13.3025 25.9358 12.125 24.4883 12.125Z"
-                                    fill="#FE5C73" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_147_127">
-                                    <rect width="18" height="18" fill="white" transform="translate(11 11)" />
-                                </clipPath>
-                            </defs>
+                    <button class="bg-gray-100 rounded-full p-2">
+                        <svg width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.442 25C9.289 25 7.53577 23.2479 7.53577 21.0938C7.53577 20.6625 7.88577 20.3125 8.31702 20.3125C8.74827 20.3125 9.09827 20.6625 9.09827 21.0938C9.09827 22.3866 10.1504 23.4375 11.442 23.4375C12.7337 23.4375 13.7858 22.3866 13.7858 21.0938C13.7858 20.6625 14.1358 20.3125 14.567 20.3125C14.9983 20.3125 15.3483 20.6625 15.3483 21.0938C15.3483 23.2479 13.5952 25 11.442 25Z"
+                                fill="#FE5C73" />
+                            <path
+                                d="M20.0357 21.875H2.84824C1.84307 21.875 1.02539 21.0573 1.02539 20.0521C1.02539 19.5187 1.25771 19.0136 1.66283 18.6666C1.68896 18.6438 1.717 18.623 1.74618 18.6041C3.2753 17.2697 4.15039 15.35 4.15039 13.3228V10.4166C4.15039 6.39591 7.42226 3.125 11.442 3.125C11.6087 3.125 11.7889 3.12805 11.9556 3.15628C12.3816 3.22704 12.6692 3.63026 12.5982 4.05521C12.5275 4.48017 12.117 4.7678 11.6993 4.69685C11.6159 4.6833 11.5244 4.6875 11.442 4.6875C8.28381 4.6875 5.71289 7.25727 5.71289 10.4166V13.3228C5.71289 15.8396 4.60968 18.2209 2.68898 19.8551C2.67334 19.8677 2.6598 19.8792 2.64301 19.8906C2.61497 19.9261 2.58789 19.9802 2.58789 20.0521C2.58789 20.1937 2.70672 20.3125 2.84824 20.3125H20.0357C20.1775 20.3125 20.2963 20.1937 20.2963 20.0521C20.2963 19.9791 20.2692 19.9261 20.24 19.8906C20.2244 19.8792 20.2108 19.8677 20.1952 19.8551C18.2734 18.2198 17.1713 15.8396 17.1713 13.3228V12.1876C17.1713 11.7563 17.5213 11.4063 17.9525 11.4063C18.3838 11.4063 18.7338 11.7563 18.7338 12.1876V13.3228C18.7338 15.3511 19.6098 17.2718 21.1411 18.6073C21.1691 18.626 21.1962 18.6459 21.2212 18.6678C21.6265 19.0136 21.8588 19.5187 21.8588 20.0521C21.8588 21.0573 21.0411 21.875 20.0357 21.875Z"
+                                fill="#FE5C73" />
+                            <path
+                                d="M18.7338 10.4166C15.8619 10.4166 13.5254 8.08029 13.5254 5.2084C13.5254 2.3365 15.8619 0 18.7338 0C21.6057 0 23.942 2.3365 23.942 5.2084C23.942 8.08029 21.6057 10.4166 18.7338 10.4166ZM18.7338 1.5625C16.7233 1.5625 15.0879 3.19786 15.0879 5.2084C15.0879 7.21874 16.7233 8.8541 18.7338 8.8541C20.7441 8.8541 22.3795 7.21874 22.3795 5.2084C22.3795 3.19786 20.7441 1.5625 18.7338 1.5625Z"
+                                fill="#FE5C73" />
                         </svg>
                     </button>
                     <button>
-                        <img class="rounded-full w-10 h-10" src="https://picsum.photos/50" alt="Avatar">
+                        <img class="rounded-full w-8 h-8" src="https://picsum.photos/50" alt="Avatar">
                     </button>
                 </div>
             </nav>
-            <!--topbar-->
-            <div class="content h-full p-4 bg-gray-100">
-                <div class="flex gap-2 mb-2">
-                    <div class="flex-auto">
-                        <div
-                            class="flex flex-col gap-8 rounded-sm text-white bg-gradient-to-r from-[#4C49ED] to-[#0A06F4]">
-                            <div class="flex justify-between px-8 py-4">
-                                <div>
-                                    <div class="text-xs">Balance</div>
-                                    5,756
-                                </div>
-                                <div>
-                                    Icon
-                                </div>
-                            </div>
-                            <!-- Balance -->
-                            <div class="flex justify-between px-8 py-4">
-                                <div>
-                                    <div class="text-xs text-gray-400">CARD HOLDER</div>
-                                    Eddy Cusuma
-                                </div>
-                                <div>
-                                    <div class="text-xs text-gray-400">VALID THRU</div>
-                                    12/22
-                                </div>
-                            </div>
-                            <!-- Owner -->
-                            <div class="flex justify-between bg-gradient-to-b from-white-200 to-transparent px-8 py-4">
-                                <div class="text-lg">
-                                    3778 **** **** 1234
-                                </div>
-                                <div>
-                                    MasterCard
+            <!-- topbar -->
+            <div class="content p-6 bg-gray-100">
+                <div class=" text-start px-4 py-4 flex-auto">
+                    <h2 class="font-semibold text-xl text-gray-700">My Cards</h2>
+                </div>
+                <div class="flex flex-col md:flex-row items-stretch gap-8 mb-10">
+                    <div class="flex gap-8">
+                        <div class="w-[20rem] h-[15rem]">
+                            <div
+                                class="text-white bg-gradient-to-r from-[#4C49ED] to-[#0A06F4] rounded-3xl overflow-x-hidden border-2">
+                                <div class="flex flex-col gap-2 rounded-lg ">
+                                    <div class="flex justify-between px-8 py-4">
+                                        <div>
+                                            <div class="text-xs">Balance</div>
+                                            5,756
+                                        </div>
+                                        <div><svg width="29" height="29" viewBox="0 0 29 29" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <rect width="29" height="29" fill="url(#pattern0_147_156)" />
+                                                <defs>
+                                                    <pattern id="pattern0_147_156"
+                                                        patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                        <use xlink:href="#image0_147_156" transform="scale(0.01)" />
+                                                    </pattern>
+                                                    <image id="image0_147_156" width="100" height="100"
+                                                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAHd0lEQVR4nO2dX4wdVR3HP79pBaEt+KIY1iItDUWFUrbBiMYY/INNwBeLhXR9MtE+iBEDrX+CCTTEID7oK2hijdRsDCiGuLggiwmmaqK7pYlVGymQtVDQoNi1he22Xx/O3JvZs9P9c+/MOSfZ83k7c+/8ft853ztzz5wzcw5kMplMJpPJZDKZTFis1x0lrQAGgeuBLcDlwFrgfOC8RtSlz0ngBDAJ/A0YB8aACTM73UvAJRsi6TJgJzAEXNxL0mXAUWAf8ICZHVnKjos2RNKlwL3ArcCKJclbvswAw8BdZvbiYnZY0JDy0rQL+CbucpRZOieAPcB3zOzMfF+c1xBJFwE/AT7anLZlza+BITN79WxfOKshktYBTwAbWhC2nHke2Gpmh+s+rDVE0gbgGeCdLQpbzhwDPmxmf/c/mGNIeZn6HbAugLDlzBHgOv/yVVQLkgrgx2QzQrAeGC4bTV0K70u7gU8Ek5S5HrijuqF7yZJ0CXAIWBVY1HLnBPA+M3sBZp8h3yKbEYPzgXs6hQK63SG39BhwBFhrCwCsBq4AdgA/Bab7Oox2mcZp3IHTvBrXT/d4S/l2SFrfLUm6X73zrl4USLpM0s/6yNsWj6haObM1r20x732dJCskHe0jUE+GVA5yt6TTjRxSf5yWtGsBrW0aMimpQNK1fQYakbS2AVNisxgzHm9Zw5aQlTEl6feSbpN0Ts0B/zyQjjoeqdFzrqQvlZqnAunYZZKG6f0PvVcOADeZ2dFKBWzANbvfEljLNPCe6riFpAHgl8DVgbUMF7hWRGg2A4+pcqaU/Tq/iKDlUc+Mc4ljBsDGgnijftcAn/e2PRpBh59zJ3HMABgocG3sWHzWK/8xgoY/eeWhCBo6rDFJiijguJld0ClIWgP8N7CGC8zseEXDcSL+SP3OxdD4P4Z5hzdbYiZCzrMS25A/e+UYA2J+Tl9TUGIb8pBXvjaCBj/nvggausQ0ZBz4gbdtWwQdn/bKD+Luk6IQ6099HPiUmb3U2SDXofcXYM5dfMtMAxs74xGllgHgMVzTPCghz5Ap3Fj9F3FjyVUzDPgu4c2gzPm96oayB+EDwG04zVMRdMVD0tcC9RXNx+7Y9RAdSSbpG7GdKDkj6etyZ+vyQ9IVar87uxdGJG2MVS/Rfg2STgErY+VfgBkzC93rDARsZZXj6l1C5e2VWHpj3xhmPLIhiZENSYxsSGJkQxIjG5IY2ZDEyIYkRjYkMbIhiZENSYxsSGJkQxIjG5IY2ZDEyIYkRjYkMbIhiZENSYyV/thxQA4B742UeyEO+RtC1VPMM+RK3LwqoxE1+IziNF0ZW0hUJH1G0r9iPYgl6d+SvhC7HpJC0sWSJiKYMSEpmdlVQz79/gZu+tT9uHlERvwJISW9DTd3ynWBNO0HbjSz/3g6CuBGYDvwQdyLsW8NISjmO4YHgc+Z2ayXLiWtxlXUVQHyf8jMZj3ZLmkL8MMA+WuJ+ae+Cdgvb0qLsoK2Aa+3mPt1YFuNGV/FvX4QxYyOiBTYU6Prlhbzba/Jd2+L+RZNKoZI0u01lTTWQp6navJ8pYU8PRH7PfUq08D7zezZzgZJV+Ne7G9qavPTwKCZHazk2Az8gThvb80hpa6Tc4C9qszSWZrT5CxuI54ZK4G9JGIGOEPeiC2iwmbgZm/b9xuM/6BX3k68eU3qOGmSXgXeHltJhXEz29IplL/iSfqfVOBl3NyQ3XU9JI0T4U3beXilwN2spcSgpG4lmdkM8JsG4j7tmTFIWmYAvFTgVoZJjRu88m8biPmMV97aQMym+WuBe4k/NT7mlZuYtsk/zhSX4BgvgKdjq6jhUq/8SgMxjy2QIwXGrGxmvggMxFZTwZ9HaxX9z6awysxOVGJGnRerhn8A7y7KP7qoM+Asgp5WPGshRps8ZGZnOjeGD5DWRF4ve+ULG4jpx/AvYTGZobxHKgDKWTmHYyryeMErN3G992P4OWKyz8yeh9ldJ3fhlk5IgTGv3MQYtx/DzxGL/+FWwAMqhpTr7N1Tt0cE/AcfPtJATD/GrxqI2QR3m9lkp+BPH1HgKuPjoVVV8LtOVuB6Ey7qM+4xYKA6bJxA18mTuBXbuppm9faWHwwBzwUWVuV+r3wD/ZsBri/M7wHwc4XkOdyahrOeK5jT/V6uGraVOK2QCeBhb9vOBuP7sR4mzvyKx4BPmtk/F72HpHWSDgccLHtT0iZPw1Vqdm2RM3IDUtUcm8rcoTgi6fKebJT0DklPBhL65Zr8oy3kmTPgJen2FvLU8YSk/oY6JBVya4y0uYbG3TV5h1rMt6Mm354W801JulOu0dQMki6R9CNJpxoU+qakO2pybZD0WoN5fF6TWwjNz3unmr18nZK0V32uQLSQMeslfVtuzaR+mFBlIKoS/0JJB/uMvRielTSnS0bSoKQDfcaelHSf3ALPS6LnR+zlTr9rcOMKg8BGXI/xGuC8ml1O4no09+O6aUbNbNYTL3KrI4wS9lHSrdXVEUodhmtp3op7lHSAsx/TcdxxHcY9ITMGHFho3fRMJpPJZDKZTCaTSYX/A3Zi8DuSk2kyAAAAAElFTkSuQmCC" />
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Balance -->
+                                    <div class="flex justify-between px-8 py-4">
+                                        <div>
+                                            <div class="text-xs text-gray-400">CARD HOLDER</div>
+                                            Eddy Cusuma
+                                        </div>
+                                        <div>
+                                            <div class="text-xs text-gray-400">VALID THRU</div>
+                                            12/22
+                                        </div>
+                                    </div>
+                                    <!-- Owner -->
+                                    <div
+                                        class="flex justify-between bg-gradient-to-b from-white-200 to-transparent px-8 py-4">
+                                        <div class="text-lg">
+                                            3778 **** **** 1234
+                                        </div>
+                                        <div class="px-0"><svg width="29" height="29" viewBox="0 0 27 19" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="9.20455" cy="9.20455" r="9.20455" fill="white"
+                                                    fill-opacity="0.5" />
+                                                <circle cx="17.7955" cy="9.20455" r="9.20455" fill="white"
+                                                    fill-opacity="0.5" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Number -->
                                 </div>
                             </div>
                         </div>
+                        <!-- Card -->
+                        <div class="w-[20rem] h-[15rem]">
+                            <div class="bg-white rounded-3xl overflow-x-hidden border-2 border-gray-300">
+                                <div class="flex flex-col gap-2 rounded-lg ">
+                                    <div class="flex justify-between px-8 py-4">
+                                        <div>
+                                            <div class="text-xs">Balance</div>
+                                            5,756
+                                        </div>
+                                        <div><svg width="29" height="29" viewBox="0 0 29 29" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <rect width="29" height="29" fill="url(#pattern0_147_205)" />
+                                                <defs>
+                                                    <pattern id="pattern0_147_205"
+                                                        patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                        <use xlink:href="#image0_147_205" transform="scale(0.01)" />
+                                                    </pattern>
+                                                    <image id="image0_147_205" width="100" height="100"
+                                                        xlink:href="data:image/png;base64,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" />
+                                                </defs>
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                    <!-- Balance -->
+                                    <div class="flex justify-between px-8 py-4">
+                                        <div>
+                                            <div class="text-xs text-gray-400">CARD HOLDER</div>
+                                            Eddy Cusuma
+                                        </div>
+                                        <div>
+                                            <div class="text-xs text-gray-400">VALID THRU</div>
+                                            12/22
+                                        </div>
+                                    </div>
+                                    <!-- Owner -->
+                                    <div
+                                        class="flex justify-between bg-gradient-to-b from-white-200 to-transparent px-8 py-4 ">
+                                        <div class="text-lg">
+                                            3778 **** **** 1234
+                                        </div>
+                                        <div class="px-0"><svg width="29" height="29" viewBox="0 0 27 19" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="9.20455" cy="9.20455" r="9.20455" fill="#9199AF"
+                                                    fill-opacity="0.5" />
+                                                <circle cx="17.7955" cy="9.20455" r="9.20455" fill="#9199AF"
+                                                    fill-opacity="0.5" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Number -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
                     </div>
-                    <div class="border border-blue-400 flex-auto"></div>
-                    <div class="border border-blue-400 flex-auto"></div>
+                    <!-- Cards -->
+                        <div class="flex-auto bg-white p-4 mb-4 rounded-2xl">
+                            <h3>Transactions</h3>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quidem earum animi, minus
+                            nam
+                            rem dolor, mollitia similique tempore illo reprehenderit magni suscipit ipsam quam
+                            cupiditate
+                            hic ullam natus excepturi.
+                        </div>   
+                    <!-- Transactions -->
                 </div>
-                <div class="border bg-red-400 h-24"></div>
-                <div class="border bg-green-400 h-24"></div>
+                <!-- First container -->
+                <div class="flex flex-col md:flex-row gap-4 items-stretch mb-10">
+                    <div class="flex-auto bg-white rounded-2xl p-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit rem quasi reprehenderit! Culpa
+                        quo nobis ab expedita, accusamus, voluptatem mollitia, nulla impedit eos iste libero vel
+                        obcaecati labore reprehenderit ullam!
+                    </div>
+                    <div class="flex-auto md:w-2/5 bg-white rounded-2xl p-4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat quo adipisci commodi saepe
+                        animi mollitia omnis unde dolorem
+                    </div>
+                </div>
+                <!-- Second container -->
+                <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                    <div class="flex-auto md:w-1/2 bg-white rounded-2xl p-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit rem quasi reprehenderit! Culpa
+                        quo nobis ab expedita, accusamus, voluptatem mollitia, nulla impedit eos iste libero vel
+                        obcaecati labore reprehenderit ullam!
+                    </div>
+                    <div class="flex-auto md:w-1/2 bg-white rounded-2xl p-4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat quo adipisci commodi saepe
+                        animi mollitia omnis unde dolorem
+                    </div>
+                </div>
             </div>
         </main>
-        <!--content-->
+        <!-- content -->
     </div>
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
